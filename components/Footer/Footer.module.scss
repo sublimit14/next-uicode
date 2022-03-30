@@ -1,0 +1,25 @@
+@import "styles/vars";
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  font-size: 14px;
+
+  a {
+    text-decoration: none;
+    color: $blackColor;
+    transition: color .2s ease-in-out;
+
+    &:hover {
+      color: $primaryColor;
+    }
+  }
+}
+
+.center span, .socials a{
+   &:not(:last-child) {
+    margin-right: 8px;
+  }
+}
