@@ -1,0 +1,41 @@
+@import "styles/vars";
+.Logo {
+  cursor: pointer;
+}
+
+.Links span:not(:last-child){
+  margin-right: 10px;
+}
+.Link a{
+  text-decoration: none;
+  color: $blackColor;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: normal;
+  transition: color .2s ease-in-out;
+  &:hover {
+    color: $primaryColor;
+  }
+}
+
+
+.headerContainer {
+  width: 100%;
+  background-color: #FFFFFF;
+  height: $hHeader;
+  position: fixed;
+  left: 0;
+  top: 0;
+
+  .inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+
+    svg {
+
+    }
+  }
+}
