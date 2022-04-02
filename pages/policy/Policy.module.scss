@@ -16,11 +16,15 @@
   margin-bottom: 20px;
 }
 .left {
+  min-width: 170px;
   align-items: flex-start;
   display: flex;
   flex-direction: column;
   //margin-right: 10px;
   word-break: break-word;
+  @media (max-width: 590px) {
+    display: none;
+  }
 
   .sticky {
     top: $hHeader + 30px;
@@ -38,15 +42,24 @@
       font-weight: 600;
       cursor: pointer;
       transition: color .2s ease-in-out;
+
       &:hover {
         color: $blackColor;
       }
     }
+
   }
 }
 .right {
   margin-left: 50px;
+  @media (max-width: 590px) {
+    margin-left: unset;
+  }
 }
 .bottomMargin {
   margin-bottom: 600px;
+}
+
+.active {
+  color: $primaryColor !important;
 }

@@ -16,7 +16,7 @@ export default function Home() {
                 />
             </Head>
 
-            <div className={styles.Home}>
+            <div className={`page ${styles.Home}`}>
                 <Hero/>
             </div>
 

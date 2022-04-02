@@ -31,7 +31,7 @@ const Contacts = (props) => {
             {/*    />*/}
             {/*</Head>*/}
 
-            <section className='container'>
+            <section className='container page' >
                 <h1>TIPE IS: {type}</h1>
                 <hr/>
                 <button onClick={() => {setType(TYPE_USER)}} >TYPE_USER</button>

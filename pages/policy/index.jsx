@@ -52,14 +52,14 @@ const Policy = () => {
 
     return (
         <MainLayout>
-            <section className={`container ${styles.policy}`}>
+            <section className={`container page ${styles.policy}`}>
                 <div className={styles.left}>
                     <div className={styles.sticky}>
 
                         {
                             headers.map((el, index) => (
-                                <span className={styles.span}>
-                                    <Link
+
+                                    <Link className={styles.span}
                                         activeClass="active"
                                         to={`sec_${index + 1}`}
                                         spy={true}
@@ -69,7 +69,7 @@ const Policy = () => {
                                     >
                                         {el.text}
                                     </Link>
-                                </span>
+
                             ))
                         }
 

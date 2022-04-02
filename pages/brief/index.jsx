@@ -1,5 +1,6 @@
 import {useState} from "react";
 import MainLayout from "../../components/MainLayout";
+import BriefForm from "../../components/BriefForm/BriefForm";
 
 
 const Brief = () => {
@@ -11,7 +12,7 @@ const Brief = () => {
 
     return (
         <MainLayout>
-            <section className="container">
+            <section className="container page">
                 <h1>Brief</h1>
                 <pre>
                 <hr/>
@@ -21,6 +22,8 @@ const Brief = () => {
                     <hr/>
                     {String(step.completed)}
             </pre>
+
+                <BriefForm></BriefForm>
             </section>
         </MainLayout>
 

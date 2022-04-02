@@ -1,25 +1,29 @@
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
+import PageTransition from "./PageTransition";
+import {useRouter} from "next/router";
 
 const MainLayout = ({ children }) => {
+
+
     return (
         <>
-
-            <nav>
-                <Header />
-            </nav>
-            <main>
-                { children }
-            </main>
-            <footer>
-                <Footer />
-            </footer>
             <style jsx>{`
                 main {
                   margin-top: 72px;
                 }
             `}</style>
+
+
+                <main>
+                    { children }
+                </main>
+            <footer>
+                <Footer />
+            </footer>
+
         </>
+
     );
 };
 

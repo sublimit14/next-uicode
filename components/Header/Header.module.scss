@@ -2,7 +2,11 @@
 .Logo {
   cursor: pointer;
 }
-
+.Links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
 .Links span:not(:last-child){
   margin-right: 10px;
 }
@@ -17,11 +21,30 @@
     color: $primaryColor;
   }
 }
+.right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .LinkBtn {
   display: block;
   background-color: #0C46C6;
 }
+.Socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
+  svg {
+    cursor: pointer;
+    fill: $blackColor;
+    transition: fill .3s ease-in-out;
+  }
+  svg:hover {
+    fill: $primaryColor;
+  }
+}
 .headerContainer {
   width: 100%;
   background-color: #FFFFFF;

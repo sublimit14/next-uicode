@@ -74,7 +74,7 @@ const Cases = ({cases}) => {
 
     return (
         <MainLayout>
-            <section className="container">
+            <section className="container page">
                 <h1>Cases</h1>
                 <select onChange={ handlerSelect }>
                     <option>All category</option>
