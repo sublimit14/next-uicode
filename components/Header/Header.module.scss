@@ -46,12 +46,14 @@
   }
 }
 .headerContainer {
+  -webkit-backdrop-filter: saturate(180%) blur(5px);
+  backdrop-filter: saturate(180%) blur(5px);
   width: 100%;
   background-color: #FFFFFF;
   height: $hHeader;
   position: fixed;
-  left: 0;
   top: 0;
+  z-index: 20;
 
   .inner {
     height: 100%;
