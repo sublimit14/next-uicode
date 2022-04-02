@@ -14,12 +14,14 @@
     "axios": "^0.26.1",
     "next": "12.1.2",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-scroll": "^1.8.6"
   },
   "devDependencies": {
     "concurrently": "^7.0.0",
     "eslint": "8.12.0",
     "eslint-config-next": "12.1.2",
+    "json-server": "^0.17.0",
     "sass": "^1.49.9"
   }
 }

@@ -1,48 +1,55 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Head from "next/head";
 import MainLayout from "../../components/MainLayout";
 import HeadContent from "../../components/HeadContent/HeadContent";
+import Cases from "../cases";
 
 const Contacts = (props) => {
+    const TYPE_USER = 'users'
+    const TYPE_COMMENTS = 'comments'
+    const TYPE_TODOS = 'todos'
+
+    const [type, setType] = useState(TYPE_USER)
+    const [data, setData] = useState('')
+
+    useEffect(()=>{
+        console.log('Type is: ',type)
+
+        fetch(`https://jsonplaceholder.typicode.com/${type}`)
+            .then(response => response.json())
+            .then(json => setData(json))
+    }, [type])
+
+
     return (
         <MainLayout>
-            <Head>
-                <HeadContent
-                    title={'Contact information | uicode.ru 🤔'}
-                    description={'uicode description'}
-                    keywords={'uicode keywords'}
-                />
-            </Head>
+            {/*<Head>*/}
+            {/*    <HeadContent*/}
+            {/*        title={'Contact information | uicode.ru 🤔'}*/}
+            {/*        description={'uicode description'}*/}
+            {/*        keywords={'uicode keywords'}*/}
+            {/*    />*/}
+            {/*</Head>*/}
 
             <section className='container'>
-                <h1>Contacts</h1>
-                <p>
-                    This example adds a property to your page,
-                    allowing you to return a React component for the layout. This allows you
-                    to define the layout on a per-page basis. Since we're returning a
-                    function, we can have complex nested layouts if desired.
-                </p>
-                <p>
-                    When navigating between pages, we want to persist page state (input
-                    values, scroll position, etc.) for a Single-Page Application (SPA)
-                    experience.
-                </p>
-                <p>
-                    This layout pattern will allow for state persistence because the React
-                    component tree is persisted between page transitions. To preserve state,
-                    we need to prevent the React component tree from being discarded between
-                    page transitions.
-                </p>
-                <h3>Try It Out</h3>
-                <p>
-                    To visualize this, try tying in the search input in the{' '}
-                    <code>Sidebar</code> and then changing routes. You'll notice the input
-                    state is persisted.
-                </p>
+                <h1>TIPE IS: {type}</h1>
+                <hr/>
+                <button onClick={() => {setType(TYPE_USER)}} >TYPE_USER</button>
+                <hr/>
+                <button onClick={() => {setType(TYPE_COMMENTS)}} >TYPE_COMMENTS</button>
+                <hr/>
+                <button onClick={() => {setType(TYPE_TODOS)}} >TYPE_TODOS</button>
+                <hr/>
+                <h2>Data</h2>
+
+                <pre>
+                    {JSON.stringify(data, null, 2)}
+                </pre>
             </section>
 
         </MainLayout>
     );
 };
+
 
 export default Contacts;

@@ -1,0 +1,52 @@
+@import "styles/vars";
+
+.policy {
+  display: flex;
+  padding-top: 30px;
+  //display: grid;
+  //grid-template-columns: 3fr 9fr;
+  //gap: 20px;
+}
+.section {
+  padding: 0 0 10px 0;
+ }
+.h1 {
+  color: $blackColor;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+.left {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  //margin-right: 10px;
+  word-break: break-word;
+
+  .sticky {
+    top: $hHeader + 30px;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    .span {
+      color: $grayColor;
+      margin-bottom: 10px;
+      font-size: 13px;
+      line-height: 1.2;
+      letter-spacing: .1px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color .2s ease-in-out;
+      &:hover {
+        color: $blackColor;
+      }
+    }
+  }
+}
+.right {
+  margin-left: 50px;
+}
+.bottomMargin {
+  margin-bottom: 600px;
+}

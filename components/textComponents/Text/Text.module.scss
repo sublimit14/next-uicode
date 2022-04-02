@@ -1,0 +1,42 @@
+@import "styles/vars";
+
+.h1 {
+  color: $blackColor;
+  font-size: 46px;
+  margin: 10px 0;
+}
+.h2 {
+  color: $blackColor;
+  font-size: 26px;
+  margin: 10px 0;
+}
+
+.h3 {
+  color: $blackColor;
+  font-size: 28px;
+  margin: 10px 0;
+}
+.h4 {
+  color: $blackColor;
+  font-size: 20px;
+  margin: 15px 0;
+}
+
+.p {
+  color: $blackColor;
+  font-size: 16px;
+  margin: 13px 0;
+  line-height: 1.2;
+  letter-spacing: .1px;
+}
+
+.a {
+  cursor: pointer;
+  text-decoration: none;
+  color: $primaryColor;
+  transition: opacity .2s ease-in-out;
+
+  &:hover {
+    opacity: .7;
+  }
+}

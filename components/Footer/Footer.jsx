@@ -10,7 +10,7 @@ const Footer = () => {
            <span>© 2019 — { new Date().getFullYear() }</span>
 
             <div className={styles.center}>
-                <span>Презентация компании</span>
+                {/*<span>Презентация компании</span>*/}
                 <span><Link href={'/policy'}><a>Политика конфеденциальности</a></Link></span>
             </div>
 
