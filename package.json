@@ -12,13 +12,16 @@
   },
   "dependencies": {
     "axios": "^0.26.1",
+    "formik": "^2.2.9",
     "next": "12.1.2",
+    "next-auth": "^4.3.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-scroll": "^1.8.6",
     "react-spring": "^9.4.4",
     "react-transition-group": "^4.4.2",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "concurrently": "^7.0.0",

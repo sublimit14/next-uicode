@@ -29,7 +29,7 @@
 
 .LinkBtn {
   display: block;
-  background-color: #0C46C6;
+  background-color: $primaryColor;
 }
 .Socials {
   display: flex;
@@ -49,8 +49,9 @@
   -webkit-backdrop-filter: saturate(180%) blur(5px);
   backdrop-filter: saturate(180%) blur(5px);
   width: 100%;
-  background-color: #FFFFFF;
+  background-color: $bgColor;
   height: $hHeader;
+  border-bottom: 1px solid $colorBorderBottom;
   position: fixed;
   top: 0;
   z-index: 20;

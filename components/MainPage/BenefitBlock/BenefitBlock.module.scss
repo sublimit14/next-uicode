@@ -1,0 +1,24 @@
+.benefit {
+  padding: 70px 0;
+  display: grid;
+  gap: 67px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  @media (max-width: 1280px) {
+    gap: 37px;
+  }
+  @media (max-width: 1175px) {
+    gap: 67px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 540px) {
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media (max-width: 490px){
+    display: flex;
+    gap: 20px;
+    flex-wrap: nowrap;
+    overflow-y: auto;
+  }
+}

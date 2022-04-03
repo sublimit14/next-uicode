@@ -1,0 +1,60 @@
+@import "styles/vars";
+
+.card {
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 490px){
+    min-width: 264px;
+  }
+
+  .bg {
+    fill: #E4E6EC;
+    transition: fill .2s ease-in-out;
+  }
+  .icon {
+    fill: $blackColor;
+    transition: fill .2s ease-in-out;
+  }
+  &:hover {
+    .bg {
+      fill: $primaryColor;
+    }
+    .icon {
+      fill: $whiteColor;
+    }
+  }
+  @media (max-width: 540px) {
+    svg {
+      width: 85.42px;
+      height: 77px;
+    }
+  }
+
+  h2 {
+    cursor: default;
+    margin-top: 26px;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+
+    @media (max-width: 540px) {
+      margin-top: 18px;
+      font-size: 18px;
+      line-height: 22px;
+    }
+  }
+  p {
+    cursor: default;
+    margin-top: 26px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 170%;
+
+    @media (max-width: 540px) {
+      margin-top: 18px;
+      font-size: 14px;
+      line-height: 150%;
+    }
+  }
+}

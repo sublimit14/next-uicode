@@ -1,0 +1,68 @@
+@import "styles/vars";
+.casesBlock {
+  padding: 60px 0;
+}
+
+.upper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h2 {
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 135%;
+  }
+  .selectors{
+
+  }
+}
+
+.bottom {
+  margin-top: 30px;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 'case1 case1 case2';
+
+  @media (max-width: 1000px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: unset;
+  }
+  @media (max-width: 580px) {
+    grid-template-columns: 1fr;
+  }
+}
+.case {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: $colorBgBlock;
+  height: 260px;
+}
+.case1 {
+  grid-area: case1;
+  height: 360px;
+  @media (max-width: 1000px) {
+    grid-area: unset;
+    height: 260px;
+  }
+  @media (max-width: 1000px) {
+    grid-area: unset;
+    height: 260px;
+  }
+  @media (max-width: 580px) {
+    height: 220px;
+  }
+}
+
+.case2 {
+  grid-area: case2;
+  height: 360px;
+  @media (max-width: 1000px) {
+    grid-area: unset;
+    height: 260px;
+  }
+  @media (max-width: 580px) {
+    height: 220px;
+  }
+}
