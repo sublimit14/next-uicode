@@ -24,7 +24,7 @@ const Header = () => {
                         {/*<span className={styles.Link}><Link href={'/cases'} ><a>Наши работы</a></Link></span>*/}
                         {/*<span className={styles.Link}><Link href={'/contacts'} className={styles.Link}><a>Контакты</a></Link></span>*/}
 
-                        <span className={styles.Link}><Link href={'/cases'} ><a>Наши работы</a></Link></span>
+                        <span className={styles.Link}><Link href={'/cases'} ><a>Наши кейсы</a></Link></span>
                         <span className={styles.Link}><Link href={'/contacts'} className={styles.Link}><a>Контакты</a></Link></span>
                         <span className={styles.Link}><Link href={'/test'} className={styles.Link}><a>Тестовая</a></Link></span>
 
