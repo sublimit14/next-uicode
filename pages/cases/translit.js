@@ -8,7 +8,6 @@ export default function transliter(word) {
         'ш': 'sh', 'щ': 'sch', 'ь': '', 'ы': 'y', 'ъ': '',
         'э': 'e', 'ю': 'yu', 'я': 'ya'
     };
-
     word = word.toLowerCase();
 
     let answer = '';

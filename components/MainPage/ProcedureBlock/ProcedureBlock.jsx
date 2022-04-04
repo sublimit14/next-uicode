@@ -33,6 +33,7 @@ const ProcedureBlock = () => {
             {
                 ProcedureCards.map(card => (
                     <ProcedureCard
+                        key={card.id}
                         id = {card.id}
                         title = {card.title}
                         text = {card.text}

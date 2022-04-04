@@ -71,3 +71,42 @@ table {
   opacity: 0;
   transition: opacity 200ms;
 }
+
+.submit-btn {
+  font-family: 'RF Dewi', sans-serif;
+  grid-area: submit;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  background-color: $primaryColor;
+  color: $whiteColor;
+  border: none;
+  border-radius: 12px;
+  padding: 20px 0;
+  cursor: pointer;
+  width: 470px;
+  transition: background-color .3s ease-in-out;
+  &:hover {
+    background-color: $hoverColor;
+  }
+}
+
+.input-field {
+  font-family: 'RF Dewi', sans-serif;
+  padding: 25px;
+  background-color: $whiteColor;
+  color: $blackColor;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  outline: 2px solid transparent;
+  transition: outline .3s ease-in-out;
+
+  &:focus {
+    outline: 2px solid $colorFocusInput;
+    cursor: text;
+  }
+}

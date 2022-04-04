@@ -59,7 +59,9 @@ const Policy = () => {
                         {
                             headers.map((el, index) => (
 
-                                    <Link className={styles.span}
+                                    <Link
+                                        key={index}
+                                        className={styles.span}
                                         activeClass="active"
                                         to={`sec_${index + 1}`}
                                         spy={true}

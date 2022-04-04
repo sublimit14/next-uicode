@@ -1,10 +1,10 @@
 import {useEffect, useState} from "react";
 
-import Link from 'next/link';
+// import Link from 'next/link';
 import MainLayout from "../../components/MainLayout";
 import styles from './Cases.module.scss';
-import transliter from "./translit";
-import UicodeButton from "../../components/UicodeButton/UicodeButton";
+// import transliter from "./translit";
+// import UicodeButton from "../../components/UicodeButton/UicodeButton";
 
 
 const Cases = ({cases}) => {
@@ -37,19 +37,19 @@ const Cases = ({cases}) => {
                 {/*        ))*/}
                 {/*    }*/}
                 {/*</select>*/}
-                <ul className={styles.ul}>
-                    {
-                        cases?.map(caa => (
-                            <li key={caa.id} className={styles.li}>
-                                <span className={styles.subtitle}>{caa.subtitle}</span>
-                                <h2 className={styles.title}>{caa.title}</h2>
-                                <p className={styles.text}>{caa.text}</p>
-                                <p className={styles.link}>
-                                <Link href={`/cases/${transliter(caa.title)}`}>Подробнее</Link>
-                                </p>
-                            </li>
-                        ))
-                    }
+                <ul className={styles.ul}>234
+                    {/*{*/}
+                    {/*    cases?.map(caa => (*/}
+                    {/*        <li key={caa.id} className={styles.li}>*/}
+                    {/*            <span className={styles.subtitle}>{caa.subtitle}</span>*/}
+                    {/*            <h2 className={styles.title}>{caa.title}</h2>*/}
+                    {/*            <p className={styles.text}>{caa.text}</p>*/}
+                    {/*            <p className={styles.link}>*/}
+                    {/*            <Link href={`/cases/${transliter(caa.title)}`}>Подробнее</Link>*/}
+                    {/*            </p>*/}
+                    {/*        </li>*/}
+                    {/*    ))*/}
+                    {/*}*/}
                 </ul>
             </section>
         </MainLayout>
@@ -65,12 +65,12 @@ const Cases = ({cases}) => {
 //     }
 // }
 
-Cases.getInitialProps = async () => {
-    const response = await fetch('http://localhost:4200/cases');
-    const cases = await response.json();
-    return {
-        cases : cases
-    }
-}
+// Cases.getInitialProps = async () => {
+//     const response = await fetch('http://localhost:4200/cases');
+//     const cases = await response.json();
+//     return {
+//         cases : cases
+//     }
+// }
 
 export default Cases;

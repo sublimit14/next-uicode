@@ -1,0 +1,33 @@
+@import "styles/vars";
+
+.ContactsForm {
+  background-color: $colorBgBlock;
+  border-radius: 28px;
+  padding: 40px;
+  width: 350px;
+
+  h2 {
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  p {
+    margin-top: 15px;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 140%;
+  }
+  .Fields {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .btn {
+    width: 180px;
+  }
+  .input {
+    width: 300px;
+  }
+}

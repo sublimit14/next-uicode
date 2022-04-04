@@ -1,45 +1,35 @@
 import {useState} from "react";
-import {useFormik, useField, ErrorMessage} from "formik";
-import * as Yup from 'yup';
+import axios from "axios";
+import { Formik, Form } from 'formik'
+import TextField from '../../Forms/TextField/TextField'
+import {sleep, validate_2} from "../../Forms/validate";
+import TextArea from "../../Forms/TextArea/TextArea";
 import styles from './BottomForm.module.scss';
 
 const BottomForm = () => {
-
     const [check, setCheck] = useState(false);
-    const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-    const initialValues = {
-        name: '',
-        phone: '',
-        telegram: '',
-        description: '',
-    };
 
     const onSubmit = async (values) => {
         await sleep(500);
-        alert(JSON.stringify(values, null, 2));
+        // alert(JSON.stringify(values, null, 2));
+        axios({
+            method: "post",
+            url: "https://admin.uicode.ru/index.php",
+            data: {
+                name: values.name,
+                phone: values.phone,
+                telegram: values.telegram,
+                description: values.description
+            },
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        })
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (response) {
+                console.log(response);
+            });
     }
-    const validationSchema = Yup.object().shape({
-        name: Yup.string()
-            .min(2, 'Too Short!')
-            .max(100, 'Too Long!')
-            .required('Required'),
-        phone: Yup.string()
-            .min(2, 'Too Short!')
-            .max(50, 'Too Long!')
-            .required('Required'),
-        telegram: Yup.string()
-            .min(2, 'Too Short!')
-            .max(50, 'Too Long!')
-            .required('Required'),
-        description: Yup.string()
-            .min(2, 'Too Short!')
-            .max(50, 'Too Long!')
-            .required('Required')
-    });
-    //TODO ASYNC VALIDATION from https://formik.org/docs/guides/validation
-    const formik = useFormik({onSubmit, initialValues, validationSchema});
-
     return (
         <div className={'container'}>
             <div className={styles.bottomForm}>
@@ -47,58 +37,72 @@ const BottomForm = () => {
                     <h2>Запустить проект вместе с нами</h2>
                     <p>Наш менеджер ответит на все ваши вопросы и отправит индивидуальное коммерческое предложение.</p>
                 </div>
+                <Formik
+                    initialValues={{
+                        name: '',
+                        phone: '',
+                        telegram: '',
+                        description: ''
+                    }}
+                    validationSchema={validate_2}
+                    onSubmit={onSubmit}
+                >
+                {
+                    (formik)=>(
+                        <Form className={styles.form}>
+                            <TextField
+                                name={'name'}
+                                type={'text'}
+                                placeholder={'Ваше имя или название компании'}
+                                // maxLength={35}
+                                className={`input-field ${styles.name}`}
+                            />
 
-                <form onSubmit={formik.handleSubmit} className={styles.form}>
-                    <input
-                        name="name"
-                        type="text"
-                        placeholder={'Ваше имя или название компании'}
-                        className={`${styles.input} ${styles.name}`}
-                        onChange={formik.handleChange}
-                        value={formik.values.name}
-                    />
-                    {!check &&
-                        <input
-                            type="text"
-                            name={'phone'}
-                            className={`${styles.input} ${styles.phone}`}
-                            placeholder={'Контактный телефон'}
-                            onChange={formik.handleChange}
-                            value={formik.values.phone}
-                        />
-                    }
-                    {check &&
-                        <input
-                            type="text"
-                            name={'telegram'}
-                            className={`${styles.input} ${styles.phone}`}
-                            placeholder={'Telegram'}
-                            onChange={formik.handleChange}
-                            value={formik.values.telegram}
-                        />
-                    }
-                    <label className={`${styles.checkbox}`}>
-                        <input
-                            type="checkbox"
-                            name={'confirmation'}
-                            onChange={() => {
-                                setCheck(!check)
-                            }}
-                        />Предпочитаю общаться через месенджер</label>
-                    <textarea
-                        name={'description'}
-                        maxLength={460}
-                        className={`${styles.input} ${styles.description}`}
-                        placeholder={'Расскажите, какой проект вам нужен, опишите детали или задайте вопрос'}
-                        onChange={formik.handleChange}
-                        value={formik.values.description}
-                    />
-                    <button
-                        type="submit"
-                        className={`${styles.submit}`}
-                    >Получить коммерческое предложение
-                    </button>
-                </form>
+
+                            {!check &&
+                                <TextField
+                                    name={'phone'}
+                                    type={'text'}
+                                    placeholder={'Контактный телефон'}
+                                    // maxLength={35}
+                                    className={`input-field ${styles.phone}`}
+                                />
+                            }
+                            {check &&
+                                <TextField
+                                    name={'telegram'}
+                                    type={'text'}
+                                    placeholder={'Telegram'}
+                                    // maxLength={35}
+                                    className={`input-field ${styles.telegram}`}
+                                />
+                            }
+                            <label className={`${styles.checkbox}`}>
+                                <input
+                                    type="checkbox"
+                                    name={'confirmation'}
+                                    onChange={() => {
+                                        setCheck(!check)
+                                    }}
+                                />
+                                Предпочитаю общаться через месенджер
+                            </label>
+                            <TextArea
+                                name={'description'}
+                                maxLength={460}
+                                placeholder={'Расскажите, какой проект вам нужен, опишите детали или задайте вопрос'}
+                                className={`input-field ${styles.description}`}
+                            />
+
+                            <button type={'submit'} className={`submit-btn ${styles.btn}`}>
+                                Получить коммерческое предложение
+                            </button>
+
+                        </Form>
+                    )
+                }
+                </Formik>
+
 
                 {/*<form className={styles.form}>*/}
                 {/*    <input*/}

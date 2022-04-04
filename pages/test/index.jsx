@@ -1,20 +1,14 @@
 import MainLayout from "../../components/MainLayout";
 import axios from 'axios';
 import {useEffect} from "react";
-import {raw} from "next/dist/build/webpack/loaders/next-middleware-wasm-loader";
-
 
 
 const Index = () => {
 
     useEffect(()=>{
         axios({
-            method: 'post',
-            url: 'http://localhost:1337/api/auth/local/',
-            data: {
-                identifier: 'sublimmmit',
-                password: 'Bagration6915831'
-            }
+            method: 'get',
+            url: 'https://jsonplaceholder.typicode.com/posts',
         }).then((res)=>{
             console.log(res.data)
         }).catch((error)=>{

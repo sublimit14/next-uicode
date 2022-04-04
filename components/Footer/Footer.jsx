@@ -11,13 +11,13 @@ const Footer = () => {
 
             <div className={styles.center}>
                 {/*<span>Презентация компании</span>*/}
-                <span><Link href={'/policy'}><a>Политика конфеденциальности</a></Link></span>
+                <span><Link href={'/policy'}><a>Политика в отношении обработки персональных данных</a></Link></span>
             </div>
 
             <div className={styles.socials}>
-                <a href={TELEGRAM_LINK} target={'_blank'}>Behance</a>
-                <a href={BEHANCE_LINK} target={'_blank'}>Telegram</a>
-                <a href={WHATSAPP_LINK} target={'_blank'}>WhatsApp</a>
+                <a href={TELEGRAM_LINK} target={'_blank'} rel={'noreferrer'}>Behance</a>
+                <a href={BEHANCE_LINK} target={'_blank'} rel={'noreferrer'}>Telegram</a>
+                <a href={WHATSAPP_LINK} target={'_blank'} rel={'noreferrer'}>WhatsApp</a>
             </div>
         </section>
     );
