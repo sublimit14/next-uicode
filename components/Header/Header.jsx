@@ -56,7 +56,6 @@ const Header = () => {
                     </div> {/* right */}
                         {/*<Link href={'/brief'} className={styles.LinkBtn}><a>Запролнить бриф</a></Link>*/}
 
-
                 </div> {/* inner */}
 
             </div>

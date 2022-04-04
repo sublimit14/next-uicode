@@ -15,8 +15,8 @@ const Footer = () => {
             </div>
 
             <div className={styles.socials}>
-                <a href={TELEGRAM_LINK} target={'_blank'} rel={'noreferrer'}>Behance</a>
-                <a href={BEHANCE_LINK} target={'_blank'} rel={'noreferrer'}>Telegram</a>
+                <a href={BEHANCE_LINK} target={'_blank'} rel={'noreferrer'}>Behance</a>
+                <a href={TELEGRAM_LINK} target={'_blank'} rel={'noreferrer'}>Telegram</a>
                 <a href={WHATSAPP_LINK} target={'_blank'} rel={'noreferrer'}>WhatsApp</a>
             </div>
         </section>

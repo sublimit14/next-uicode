@@ -53,7 +53,7 @@ const ContactsForm = () => {
                                 placeholder={'Контактный телефон'}
                                 className={`input-field ${styles.input}`}
                             />
-                            <button type={'submit'} className={`submit-btn ${styles.btn}`} type={'submit'}>
+                            <button type={'submit'} className={`submit-btn ${styles.btn}`}>
                                 Отправить
                             </button>
                             {/*{ console.log(formik.values) }*/}

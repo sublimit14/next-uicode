@@ -5,11 +5,20 @@
   border-radius: 28px;
   padding: 40px;
   width: 350px;
+  @media (max-width: 630px) {
+    padding: 40px 30px;
+    width: unset;
+  }
 
   h2 {
     font-weight: 800;
     font-size: 30px;
     line-height: 36px;
+    @media (max-width: 630px) {
+      font-size: 24px;
+      line-height: normal;
+    }
+
   }
 
   p {
@@ -17,17 +26,29 @@
     font-weight: 400;
     font-size: 15px;
     line-height: 140%;
+    @media (max-width: 630px) {
+      font-size: 14px;
+      line-height: normal;
+    }
   }
   .Fields {
     margin-top: 25px;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    @media (max-width: 630px) {
+      margin-top: 13px;
+      gap: 13px;
+    }
   }
   .btn {
     width: 180px;
+
   }
   .input {
     width: 300px;
+    @media (max-width: 630px) {
+      width: 80%;
+    }
   }
 }

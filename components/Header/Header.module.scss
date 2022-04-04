@@ -1,36 +1,51 @@
 @import "styles/vars";
+
 .Logo {
   cursor: pointer;
+  flex-shrink: 0;
 }
+
 .Links {
   display: flex;
   align-items: center;
   gap: 20px;
+  @media (max-width: 870px) {
+    display: none;
+  }
 }
-.Links span:not(:last-child){
+
+.Links span:not(:last-child) {
   margin-right: 10px;
 }
-.Link a{
+
+.Link a {
   text-decoration: none;
   color: $blackColor;
   font-weight: 400;
   font-size: 15px;
   line-height: normal;
   transition: color .2s ease-in-out;
+
   &:hover {
     color: $primaryColor;
   }
 }
+
 .right {
   display: flex;
   align-items: center;
   gap: 20px;
+
+  @media (max-width: 870px) {
+    display: none;
+  }
 }
 
 .LinkBtn {
   display: block;
   background-color: $primaryColor;
 }
+
 .Socials {
   display: flex;
   align-items: center;
@@ -41,10 +56,12 @@
     fill: $blackColor;
     transition: fill .3s ease-in-out;
   }
+
   svg:hover {
     fill: $primaryColor;
   }
 }
+
 .headerContainer {
   -webkit-backdrop-filter: saturate(180%) blur(5px);
   backdrop-filter: saturate(180%) blur(5px);

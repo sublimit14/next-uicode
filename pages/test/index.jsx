@@ -1,20 +1,7 @@
 import MainLayout from "../../components/MainLayout";
-import axios from 'axios';
-import {useEffect} from "react";
 
 
-const Index = () => {
-
-    useEffect(()=>{
-        axios({
-            method: 'get',
-            url: 'https://jsonplaceholder.typicode.com/posts',
-        }).then((res)=>{
-            console.log(res.data)
-        }).catch((error)=>{
-            console.log(error)
-        });
-    },[])
+const Test = () => {
 
 
     return (
@@ -31,4 +18,4 @@ const Index = () => {
     );
 };
 
-export default Index;
+export default Test;
