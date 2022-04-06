@@ -1,15 +1,11 @@
 import {useEffect, useRef} from "react";
 import MainLayout from "../../components/MainLayout";
 import styles from './Case.module.scss';
-import {gsap} from "gsap";
+import { gsap } from "gsap";
 import ToTopButton, { scrollTop,  } from "../../components/ToTopButton/ToTopButton";
 const Case = () => {
     const bodyRef = useRef(null);
     const bgImgRef = useRef(null);
-
-    // const scrollToTop = () => {setTimeout(()=>{
-    //     window.scrollTo({ top: 0, behavior: "smooth" });
-    // }, 50)}
 
     const timeLine = gsap.timeline({
         defaults: {
@@ -18,7 +14,6 @@ const Case = () => {
     })
 
     useEffect(() => {
-
         timeLine
             .from(bgImgRef.current, {
             opacity: 0,
@@ -29,11 +24,9 @@ const Case = () => {
             delay: .3,
             y: 700,
             ease: "none"
-
         })
         scrollTop();
     })
-
 
     return (
         <>
@@ -47,7 +40,6 @@ const Case = () => {
                         ref={bodyRef}
                         className={styles.body}
                     >
-
 
                     </div>
 

@@ -1,8 +1,35 @@
+import {useEffect, useRef} from "react";
 import styles from './Hero.module.scss';
 import Image from 'next/image';
 import bgImage from '../../../public/hero_bg.jpg'
+import { gsap } from "gsap";
+import {scrollTop} from "../../ToTopButton/ToTopButton";
 
 const Hero = () => {
+
+    const h1Ref = useRef(null);
+    const textRef = useRef(null);
+
+    const timeLine = gsap.timeline({
+        defaults: {
+            duration: .6,
+        }
+    })
+
+    useEffect(() => {
+        timeLine
+            .from(h1Ref.current, {
+                opacity: 0,
+                delay: .1,
+                y: 20,
+            })
+            .from(textRef.current, {
+                opacity: 0,
+                delay: .4,
+                y: 20,
+            })
+    }, [])
+
     return (
 
         <div className={styles.hero}>
@@ -12,8 +39,8 @@ const Hero = () => {
                 <div className={styles.content}>
 
                     <div className={styles.upper}>
-                        <h1>Разработка сервисов, <br/>веб-приложений и&nbsp;eComerce</h1>
-                        <p>Создаем сайты&nbsp;и приложения&nbsp;с нуля. Развиваем&nbsp;уже существующие. <br/>Переводим задачи бизнеса в
+                        <h1 ref={h1Ref}>Разработка сервисов, <br/>веб-приложений и&nbsp;eComerce</h1>
+                        <p ref={textRef}>Создаем сайты&nbsp;и приложения&nbsp;с нуля. Развиваем&nbsp;уже существующие. <br/>Переводим задачи бизнеса в
                             интерфейсы и&nbsp;API.</p>
                     </div>
 
@@ -34,9 +61,11 @@ const Hero = () => {
                 <Image
                     layout="fill"
                     objectFit={"cover"}
-                    quality={"100"}
+                    quality={"90"}
                     alt="Background image"
                     src={bgImage}
+                    placeholder={'blur'}
+
                 />
             </div>
         </div>
