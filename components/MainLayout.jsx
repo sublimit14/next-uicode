@@ -5,7 +5,7 @@ const MainLayout = ({children}) => {
 
     return (
         <>
-            <main>
+            <main style={{ position: "relative"}}>
                 {children}
             </main>
             <footer>
