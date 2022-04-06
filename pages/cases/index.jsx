@@ -3,49 +3,65 @@ import MainLayout from "../../components/MainLayout";
 import styles from './Cases.module.scss';
 import Link from 'next/link';
 import Image from 'next/image'
-const Cases = ({cases, id}) => {
+import axios from 'axios';
+
+const Cases = ({cases, error}) => {
 
     const [filteredCases, setFilteredCases] = useState(cases);
-    console.log(filteredCases);
+    // console.log(filteredCases);
+
+    if (error) {
+        return <div>An error occured: {error.message}</div>;
+    }
+    const cardStyleBg = {
+        // backgroundImage: "url(" + { Background } + ")"
+        backgroundImage: "url(" + "https://cdn.pixabay.com/photo/2021/09/02/16/48/cat-6593947_960_720.jpg" + ")"
+    };
+
     return (
         <MainLayout>
-            <section className="container page">
-                <h1>Cases</h1>
+            <section className="container">
 
-                <ul className={styles.ul}>
-                    {
+                <div className={styles.cases}>
+                <h1>Наши кейсы</h1>
 
-                        filteredCases?.map((cas)=>(
-                            <li key={cas.id}>
-                                <Image
-                                src={'/PS_Dnon_B_Feb262_4_7693a0e7df.png'}
-                                width={300}
-                                height={200}
-                                alt={cas.attributes.title}
-                                />
-                                <h2>ID: {cas.id}</h2>
-                                <span>{cas.attributes.subtitle}</span>
-                                <p>{cas.attributes.title}</p>
-                                <Link href={`/cases/${cas.attributes.title_unique}`}>Link</Link>
-                            </li>
-                        ))
-                    }
-                </ul>
+                    <div className={styles.wrapper}>
+
+                        {
+
+                            filteredCases?.map((cas)=>(
+                                <Link href={`/cases/${cas.attributes.title_unique}`}>
+                                    <div key={cas.id} className={styles.card} style={ cardStyleBg }>
+                                        <h2>{cas.attributes.title}</h2>
+                                        <div className={styles.tags}>
+                                            <div className={styles.tag}>Дизайн</div>
+                                            <div className={styles.tag}>Разработка сайта</div>
+                                        </div>
+
+                                        <div className={styles.overlay} />
+
+                                    </div>
+                                </Link>
+                            ))
+                        }
+                    </div>
+
+
+                </div>
             </section>
         </MainLayout>
     );
 };
 
-export const getStaticProps = async () => {
-    const response = await fetch(`${process.env.API_HOST}cases/`);
-    // const response = await fetch(`${process.env.API_HOST}/upload/files/`);
-    const cases = await response.json();
-    console.log(cases)
-    return {
-        props: {
-            cases: cases.data
-        }
+Cases.getInitialProps = async ctx => {
+    try {
+        const res = await axios.get('http://localhost:1337/api/cases');
+        const cases = res.data;
+        return { cases: cases.data };
+    } catch (error) {
+        return { error };
     }
-}
+};
+
 
 export default Cases;
