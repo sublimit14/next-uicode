@@ -21,6 +21,7 @@ const PartnersBlock = () => {
                         {
                             partners.map((partner) => (
                                 <Image
+                                    key={partner.desc}
                                     src={partner.path}
                                     alt={partner.desc}
                                     objectFit={'contain'}

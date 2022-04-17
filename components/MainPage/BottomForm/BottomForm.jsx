@@ -50,7 +50,9 @@ const BottomForm = () => {
                 {
                     (formik)=>(
                         <Form className={styles.form}>
+
                             <TextField
+                                area = {'name-area'}
                                 name={'name'}
                                 type={'text'}
                                 placeholder={'Ваше имя или название компании'}
@@ -58,9 +60,9 @@ const BottomForm = () => {
                                 className={`input-field ${styles.name}`}
                             />
 
-
                             {!check &&
                                 <TextField
+                                    area = {'phone-area'}
                                     name={'phone'}
                                     type={'text'}
                                     placeholder={'Контактный телефон'}
@@ -70,11 +72,12 @@ const BottomForm = () => {
                             }
                             {check &&
                                 <TextField
+                                    area = {'phone-area'}
                                     name={'telegram'}
                                     type={'text'}
                                     placeholder={'Telegram'}
                                     // maxLength={35}
-                                    className={`input-field ${styles.telegram}`}
+                                    className={`input-field ${styles.phone}`}
                                 />
                             }
                             <label className={`${styles.checkbox}`}>
@@ -87,11 +90,12 @@ const BottomForm = () => {
                                 />
                                 Предпочитаю общаться через месенджер
                             </label>
+
                             <TextArea
+                                className={`input-field ${styles.description}`}
                                 name={'description'}
                                 maxLength={460}
                                 placeholder={'Расскажите, какой проект вам нужен, опишите детали или задайте вопрос'}
-                                className={`input-field ${styles.description}`}
                             />
 
                             <button type={'submit'} className={`submit-btn ${styles.btn}`}>

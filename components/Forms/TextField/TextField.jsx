@@ -2,16 +2,14 @@ import styles from './TextField.module.scss';
 import { useField, ErrorMessage } from 'formik';
 import InputMask from 'react-input-mask'
 
-const TextField = ({ maxLength, placeholder, label, ...props }) => {
+const TextField = ({ area, stylesOuter, maxLength, placeholder, label, ...props }) => {
 
     const [field, meta] = useField(props)
-    // console.log('field >>', field)
-    // console.log('meta >>', meta)
 
     return (
-        <div>
+        <div className={area}>
             <InputMask
-                className={`input-field ${styles.input}`}
+                // className={`input-field`}
                 autoComplete={'off'}
                 type={'text'}
                 placeholder={placeholder}
@@ -19,10 +17,12 @@ const TextField = ({ maxLength, placeholder, label, ...props }) => {
                 {...field}
                 {...props}
             />
-            <div className={styles.error}>
-                <ErrorMessage name={field.name} />
-            </div>
-
+            {
+                ErrorMessage &&
+                <div className={styles.error}>
+                    <ErrorMessage name={field.name} />
+                </div>
+            }
 
         </div>
     );

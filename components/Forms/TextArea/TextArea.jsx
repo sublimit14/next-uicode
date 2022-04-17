@@ -5,7 +5,7 @@ const TextArea = ({ maxLength, placeholder, label, ...props }) => {
 
     const [field, meta] = useField(props)
     return (
-        <div>
+        <>
             <textarea
                 autoComplete={'off'}
                 placeholder={placeholder}
@@ -13,12 +13,13 @@ const TextArea = ({ maxLength, placeholder, label, ...props }) => {
                 {...field}
                 {...props}
             />
-            <div className={styles.error}>
-                <ErrorMessage name={field.name} />
-            </div>
+            {/*{ ErrorMessage &&*/}
+            {/*    <div className={styles.error}>*/}
+            {/*        <ErrorMessage name={field.name} />*/}
+            {/*    </div>*/}
+            {/*}*/}
 
-
-        </div>
+        </>
     );
 };
 
