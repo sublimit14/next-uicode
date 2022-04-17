@@ -111,7 +111,6 @@ table {
   }
 }
 
-::-webkit-scrollbar {
-  //width: 0;
-  //display: none;
+.marquee {
+  min-width: unset !important;
 }
