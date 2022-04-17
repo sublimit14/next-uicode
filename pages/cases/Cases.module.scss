@@ -39,6 +39,12 @@
   background-size: cover;
   position: relative;
 
+  .img {
+    position: absolute;
+    z-index: -11;
+
+  }
+
   h2 {
     font-weight: 800;
     font-size: 20px;
@@ -59,7 +65,8 @@
     z-index: -10;
     border-radius: 4px;
     opacity: 0;
-    transition: opacity .3s ease-in-out;
+    backdrop-filter: blur(2px);
+    transition: opacity .3s ease-in-out, backdrop-filter .3s ease-in-out;
   }
 
   &:hover {
@@ -125,3 +132,4 @@
   border-radius: 4px;
   padding: 4px 10px;
 }
+
