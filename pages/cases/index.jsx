@@ -32,7 +32,7 @@ const Cases = ({cases}) => {
         e.target.className=`${styles.filterItem} ${styles.selected}`
         // console.log(e.target.outerText)
     }
-
+    console.log(cases[0].attributes.headerText)
     return (
         <MainLayout>
             <section className="container">
@@ -53,7 +53,7 @@ const Cases = ({cases}) => {
                     <div className={styles.wrapper}>
                         {
                             filteredCases?.map((cas) => (
-                                <Link key={cas.id} href={`/cases/${cas.attributes.title_unique}`}>
+                                <Link key={cas.id} href={`/cases/${cas.id}`}>
                                     <div className={styles.card}>
                                         <h2>{cas.attributes.title}</h2>
                                         <div className={styles.tags}>
@@ -68,8 +68,6 @@ const Cases = ({cases}) => {
                                         <div className={styles.overlay}/>
                                         <Image
                                             className={styles.img}
-                                            // width="440"
-                                            // height="308"
                                             objectFit={'cover'}
                                             layout='fill'
                                             src={`http://localhost:1337${cas.attributes.preview_img.data.attributes.url}`}
@@ -80,7 +78,7 @@ const Cases = ({cases}) => {
                                 </Link>
                             ))
                         }
-                    </div>
+                    </div> {/* wrapper */}
                 </div>
             </section>
         </MainLayout>

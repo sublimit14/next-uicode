@@ -1,5 +1,4 @@
 import { TransitionGroup, Transition as ReactTransition } from "react-transition-group"
-import { ReactChild } from "react"
 
 const TIMEOUT = 300;
 

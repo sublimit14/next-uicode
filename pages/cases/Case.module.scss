@@ -1,0 +1,35 @@
+@import "styles/vars";
+
+.case {
+  width: 100%;
+  //background-color: #303030;
+  height: 530px;
+  //position: fixed;
+  position: sticky;
+  top: 72px;
+  z-index: -2;
+}
+
+.body {
+  margin-top: -360px;
+  padding: 20px;
+  background: $whiteColor;
+  border: 1px solid #D1D1D1;
+  box-shadow: 0 6px 14px rgba(48, 48, 48, 0.19);
+  border-radius: 20px;
+  height: 1700px;
+  position: relative;
+}
+
+//.toTop {
+//  bottom: 20px;
+//  left: 20px;
+//  z-index: 1110;
+//  position: fixed;
+//  padding: 20px;
+//  font-weight: 700;
+//  color: #7483B0;
+//  background-color: #C7D1EF;
+//  border-radius: 12px;
+//  cursor: pointer;
+//}
